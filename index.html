@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6e6;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 5%;
+        }
+
+        .question {
+            font-size: 3em;
+            color: #d63384;
+        }
+
+        .gif {
+            width: 300px;
+            height: auto;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+        }
+
+        button {
+            font-size: 1.5em;
+            padding: 15px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .yes-button {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        .no-button {
+            background-color: #ffffff;
+            color: black;
+            position: absolute;
+            transition: top 0.2s, left 0.2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p class="question">БУДЕШЬ МОЕЙ ВАЛЕНТИНКОЙ? ❤️</p>
+        <img class="gif" src="674297f2d7323258837db64f8550ac97.gif" alt="Valentine GIF">
+        <div class="buttons">
+            <button class="yes-button" onclick="goToYesPage()">ДА</button>
+            <button class="no-button" onmouseover="moveButton(this)">НЕТ</button>
+        </div>
+    </div>
+
+    <script>
+        function goToYesPage() {
+            window.location.href = 'yes.html';
+        }
+
+        function moveButton(button) {
+            const maxX = window.innerWidth - button.clientWidth - 10;
+            const maxY = window.innerHeight - button.clientHeight - 10;
+
+            let x = Math.random() * maxX;
+            let y = Math.random() * maxY;
+
+            
+            x = x < 10 ? 10 : x;
+            y = y < 10 ? 10 : y;
+
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+
+</html>
